@@ -75,42 +75,6 @@ const MainNavigation = () => {
         />
       </Tab.Navigator>
     </NavigationContainer>
-
-    // <NavigationContainer>
-    //   <Tab.Navigator
-    //     tabBarLabelStyle="blue"
-    //     screenOptions={({route}) => ({
-    //       tabBarIcon: ({focused}) => {
-    //         let iconName;
-
-    //         if (route.name === 'Home') {
-    //           iconName = focused ? 'home-circle' : 'home';
-    //         } else if (route.name === 'About') {
-    //           iconName = focused ? 'information' : 'information-outline';
-    //         } else if (route.name === 'Map') {
-    //           iconName = focused ? 'map-marker-multiple' : 'map-marker-alert';
-    //         } else if (route.name === 'Apples') {
-    //           iconName = focused ? 'food-apple' : 'food-apple-outline';
-    //         } else if (route.name === 'Feed') {
-    //           iconName = focused ? 'newspaper' : 'newspaper-variant-outline';
-    //         }
-
-    //         return <Icon name={iconName} size={25} color="blue" />;
-    //       },
-    //       tabBarActiveTintColor: 'blue',
-    //       tabBarpressColor: 'true',
-    //       tabBarinactiveTintColor: 'green',
-    //       tabBarLabelStyle: {
-    //         fontSize: 17,
-    //       },
-    //     })}>
-    //     <Tab.Screen name="Home" component={Home} />
-    //     <Tab.Screen name="About" component={About} />
-    //     <Tab.Screen name="Map" component={Map} />
-    //     <Tab.Screen name="Apples" component={Apples} />
-    //     <Tab.Screen name="Feed" component={Feed} />
-    //   </Tab.Navigator>
-    // </NavigationContainer>
   );
 };
 
