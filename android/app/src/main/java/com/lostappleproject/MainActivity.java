@@ -2,6 +2,8 @@ package com.lostappleproject;
 
 import com.facebook.react.ReactActivity;
 
+import android.os.Bundle;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -12,4 +14,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "LostAppleProject";
   }
+
+//In order to use react-native-screens package for configuration to work on Android devices
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  } 
 }
