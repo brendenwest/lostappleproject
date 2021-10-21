@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 function Home() {
   return (
     <View style={styles.container}>
-      <View style={styles.logocontainer}>
+      <View style={styles.logoontainer}>
         <Image style={styles.logo} source={require('../Images/lapLogo.jpg')} />
       </View>
 
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   logoContainer: {
-    flex: 0.3,
+    flex: 3,
     backgroundColor: 'blue',
     borderWidth: 5,
 
