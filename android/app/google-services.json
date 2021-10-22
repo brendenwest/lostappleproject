@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "214588034741",
+    "project_id": "lost-apple-project",
+    "storage_bucket": "lost-apple-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214588034741:android:2d75610077b35a82c178fc",
+        "android_client_info": {
+          "package_name": "com.lostappleproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214588034741-21ilqbdco7ggi5ou6algljl2fo8v3kkk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lostappleproject",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "214588034741-q70fdmpdaorl194heqk9epqi4rjnfdhc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBNyrqGmDFWmiXq5Ld1NROsWBLDw_lJZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214588034741-q70fdmpdaorl194heqk9epqi4rjnfdhc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
