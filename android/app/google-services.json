@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "214588034741-21ilqbdco7ggi5ou6algljl2fo8v3kkk.apps.googleusercontent.com",
+          "client_id": "214588034741-d5tei3o01kgsej9jm1i540mtk6rirfns.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.lostappleproject",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+            "certificate_hash": "d18f7885f666706b28df40a558ac8cd3f4906a4b"
           }
         },
         {
