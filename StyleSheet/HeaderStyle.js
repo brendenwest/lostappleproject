@@ -26,8 +26,5 @@ export default StyleSheet.create({
         alignSelf: 'center',
         fontWeight: 'bold',
     }
-    ,
-    summaryText: {
 
-    }
 });
