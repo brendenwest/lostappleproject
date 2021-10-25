@@ -34,7 +34,7 @@ const MainNavigation = () => {
           }}
         />
         <Tab.Screen
-          name="About"
+          name="About Us"
           component={About}
           options={{
             tabBarLabel: 'About',
