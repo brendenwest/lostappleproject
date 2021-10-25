@@ -1,12 +1,11 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { DText, View, StyleSheet, Image } from 'react-native';
+import Header from '../shared/Header';
+
 
 function Home() {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Home Page!</Text>
-    </View>
+    <Header />
   );
-}
-
+};
 export default Home;
