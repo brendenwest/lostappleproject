@@ -1,12 +1,16 @@
 import React from 'react';
-import {Text, ScrollView} from 'react-native';
+import {Text, ScrollView, Image} from 'react-native';
+import Header from '../shared/Header';
 import styles from '../StyleSheet/About';
 
 function About() {
   return (
     <ScrollView>
-      <Text style={styles.Rectangle}>Logo placeholder</Text>
-      <Text style={styles.square}>Image placeholder</Text>
+      <Header />
+      <Image
+        style={styles.aboutImg}
+        source={require('../Images/david-denscoter.jpeg')}
+      />
       <Text style={styles.centerText}>
         Organized in 1972, the Whitman County Historical Society strives to
         preserve the history and cultural heritage of our region. To do this the
@@ -14,9 +18,16 @@ function About() {
         in the area. The society owns two museums, three historic buildings,
         publishes a newsletter and a historical journal, and maintains a growing
         archival collection. In addition, the Historical Society has a number of
-        on going projects.
+        on going projects. David Benscoter, a retired FBI, and IRS Criminal
+        Division agent, heads the Lost Apple Project that is one of the ongoing
+        projects. Apple Detectives as part of Lost Project search for rare
+        varieties of Apples.
       </Text>
-      <Text style={styles.square}>Image placeholder</Text>
+
+      <Image
+        style={styles.aboutImg1}
+        source={require('../Images/northwest.png')}
+      />
       <Text style={styles.centerText}>
         In 2017 a total of 200 apple varieties were sent to experts in Oregon
         for testing, resulting in five new re-discovered apples and many
@@ -28,7 +39,10 @@ function About() {
         Idaho have been re-discovered through the efforts of Lost Apple Project
         (LAP).
       </Text>
-      <Text style={styles.square}>Image placeholder</Text>
+      <Image
+        style={styles.aboutImg1}
+        source={require('../Images/apple-note.jpeg')}
+      />
       <Text style={styles.centerText}>
         In 2017 the LAP sold nearly 100 apple trees, including 80 once lost
         varieties, to the people of eastern Washington. This year there will be
@@ -42,7 +56,15 @@ function About() {
       </Text>
       <Text style={styles.contact}>
         <Text style={styles.textHeading}> Contact Info{'\n'}</Text>
-        {'\b'} Contact placeholder
+        {'\b'}
+        <Text style={{fontWeight: 'bold'}}>Address: </Text> {'\n'}
+        PO Box 67 Colfax, WA 99111 {'\b'} {'\n'}
+        <Text style={{fontWeight: 'bold'}}>Email to:</Text> {'\n'}
+        {'\b'}
+        wchsdirector1@gmail.com {'\n'}
+        {'\b'}
+        <Text style={{fontWeight: 'bold'}}>Email to Dave Benscoter:</Text>
+        dbens23@gmail.com
       </Text>
     </ScrollView>
   );
