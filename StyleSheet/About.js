@@ -29,6 +29,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     color: '#142044',
+    marginBottom: 2,
   },
 
   contact: {
@@ -36,15 +37,14 @@ export default StyleSheet.create({
     borderWidth: 2,
     borderColor: 'brown',
     marginTop: 5,
+    paddingTop: 5,
     marginRight: 10,
     marginBottom: 10,
-    padding: 10,
-    width: 210,
-    height: 160,
+    width: 230,
+    height: 130,
     backgroundColor: 'skyblue',
     textAlign: 'center',
     alignSelf: 'flex-end',
-    lineHeight: 20,
     color: 'black',
   },
 });
