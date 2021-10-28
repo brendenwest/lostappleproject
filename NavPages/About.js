@@ -58,18 +58,20 @@ function About() {
         <Text>PO Box 67 Colfax, WA 99111{'\n'}</Text>
         <View>
           <Button
-            title="Email to WCHS"
+            title="Email to David"
             onPress={() =>
               Linking.openURL(
-                `wchsdirector1@gmail.com@gmail.com?subject=Whitman County Historical Society&body`,
+                `mailto:dbens23@gmail.com?subject=Apple Project&body`,
               )
             }
             color="royalblue"
           />
           <Button
-            title="Email to Benscoter"
+            title="Email to WCHS"
             onPress={() =>
-              Linking.openURL(`dbens23@gmail.com?subject=Apple Project&body`)
+              Linking.openURL(
+                `wchsdirector1@gmail.com@gmail.com?subject=WHCHS&body`,
+              )
             }
             color="blue"
           />
