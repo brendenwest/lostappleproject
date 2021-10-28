@@ -1,8 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image, ScrollView} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
+import Header from '../shared/Header';
+import styles from '../StyleSheet/AppleList';
 
-function About() {
+function Apples() {
   const appleCollection = firestore().collection('apples');
   function onResult(QuerySnapshot) {
     console.log('Got Apple collection result.');
@@ -11,22 +13,27 @@ function About() {
   function onError(error) {
     console.error(error);
   }
-  
+ 
   appleCollection.onSnapshot(onResult, onError);
 
-  /* firestore().collection('apples').get()
+  firestore().collection('apples').get()
   .then(querySnapshot => {
     console.log('Total apples: ', querySnapshot.size);
-    querySnapshot.forEach(documentSnapShot => {
-      console.log('apple: ', documentSnapshot.id, documentSnapshot.data());
+    querySnapshot.forEach(documentSnapshot => {
+      console.log('apple: ', documentSnapshot.data().name);
     });
-  }); */
+  });
   
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Apples Page!</Text>
-    </View>
+    <ScrollView /*style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}*/>
+      <Header />
+      <Text style={styles.centerText}>Apples Page!</Text>
+      <Image
+        style={styles.applePlaceholder}
+        source={require('../Images/apple-3155.png')}
+      />
+    </ScrollView>
   );
 }
 
-export default About;
+export default Apples;
