@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ScrollView, Image} from 'react-native';
+import {Text, ScrollView, Image, Button, Linking, View} from 'react-native';
 import Header from '../shared/Header';
 import styles from '../StyleSheet/About';
 
@@ -23,7 +23,6 @@ function About() {
         projects. Apple Detectives as part of Lost Project search for rare
         varieties of Apples.
       </Text>
-
       <Image
         style={styles.aboutImg1}
         source={require('../Images/northwest.png')}
@@ -56,15 +55,27 @@ function About() {
       </Text>
       <Text style={styles.contact}>
         <Text style={styles.textHeading}> Contact Info{'\n'}</Text>
-        {'\b'}
-        <Text style={{fontWeight: 'bold'}}>Address: </Text> {'\n'}
-        PO Box 67 Colfax, WA 99111 {'\b'} {'\n'}
-        <Text style={{fontWeight: 'bold'}}>Email to:</Text> {'\n'}
-        {'\b'}
-        wchsdirector1@gmail.com {'\n'}
-        {'\b'}
-        <Text style={{fontWeight: 'bold'}}>Email to Dave Benscoter:</Text>
-        dbens23@gmail.com
+        <Text>PO Box 67 Colfax, WA 99111{'\n'}</Text>
+        <View>
+          <Button
+            title="Email to David"
+            onPress={() =>
+              Linking.openURL(
+                `mailto:dbens23@gmail.com?subject=Apple Project&body`,
+              )
+            }
+            color="royalblue"
+          />
+          <Button
+            title="Email to WCHS"
+            onPress={() =>
+              Linking.openURL(
+                `mailto:wchsdirector1@gmail.com@gmail.com?subject=WHCH&body`,
+              )
+            }
+            color="blue"
+          />
+        </View>
       </Text>
     </ScrollView>
   );
