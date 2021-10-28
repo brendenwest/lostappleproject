@@ -70,7 +70,7 @@ function About() {
             title="Email to WCHS"
             onPress={() =>
               Linking.openURL(
-                `wchsdirector1@gmail.com@gmail.com?subject=WHCHS&body`,
+                `mailto:wchsdirector1@gmail.com@gmail.com?subject=WHCH&body`,
               )
             }
             color="blue"
