@@ -12,31 +12,31 @@ function About() {
         source={require('../Images/david-denscoter.jpeg')}
       />
       <Text style={styles.centerText}>
-        Organized in 1972, the Whitman County Historical Society strives to
-        preserve the history and cultural heritage of our region. To do this the
-        society has developed programs designed to meet a variety of interests
-        in the area. The society owns two museums, three historic buildings,
-        publishes a newsletter and a historical journal, and maintains a growing
-        archival collection. In addition, the Historical Society has a number of
-        on going projects. David Benscoter, a retired FBI, and IRS Criminal
-        Division agent, heads the Lost Apple Project that is one of the ongoing
-        projects. Apple Detectives as part of Lost Project search for rare
-        varieties of Apples.
+        Lost Apple Project (LAP) is a nonprofit organization founded by David
+        Benscoter, a retired FBI and IRS Criminal Division agent, who has ties
+        to Pullman, having graduated from Pullman High and WSU. He became
+        interested in apples after a Chattaroy, Washington, neighbor asked for
+        help with the old trees on her property. Since then, David has been on
+        the lookout for apple varieties that have become extinct. Lost Apple
+        Project (LAP) has a mission to search abandoned farms and orchards to
+        locate and preserve heritage apple trees and orchards planted before
+        1920 in Pacific Northwest Washington State. In addition, LAP aims to
+        search for a specific list of apple varieties that are now considered
+        extinct or lost. When lost varieties are rediscovered, steps will be
+        taken to propagate the trees and make them available again to the
+        public. LAP partnered with Whitman County Historical Society (WCHS) to
+        identify and preserve apple trees and orchards.
       </Text>
       <Image
         style={styles.aboutImg1}
         source={require('../Images/northwest.png')}
       />
       <Text style={styles.centerText}>
-        In 2017 a total of 200 apple varieties were sent to experts in Oregon
-        for testing, resulting in five new re-discovered apples and many
-        considered heirloom types. Since 2016 four lost (thought to be extinct)
-        apple varieties from the Palouse have been located and identified: Nero,
-        Arkansas Beauty, Dickinson, and McAfee. The Fall Jeneting, located in
-        Colfax, became the second known re-discovery of this variety.
-        Additionally four other lost apples from locations in Washington and
-        Idaho have been re-discovered through the efforts of Lost Apple Project
-        (LAP).
+        To inspect trees, LAP depends on receiving information from people, old
+        county fair records, newspaper clipping, etc. After finding the apple
+        tree, LAP sends apples to an identification expert to determine if they
+        are special. As of now, LAP has discovered 29 lost or nearly extinct
+        apple varieties. Some were found in Washington, Oregon, and Idaho.
       </Text>
       <Image
         style={styles.aboutImg1}
