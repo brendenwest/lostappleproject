@@ -1,5 +1,6 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
+import Header from './Header';
 import firestore from '@react-native-firebase/firestore';
 
 function About() {
@@ -7,11 +8,11 @@ function About() {
   function onResult(QuerySnapshot) {
     console.log('Got Apple collection result.');
   }
-  
+
   function onError(error) {
     console.error(error);
   }
-  
+
   appleCollection.onSnapshot(onResult, onError);
 
   /* firestore().collection('apples').get()
@@ -21,11 +22,12 @@ function About() {
       console.log('apple: ', documentSnapshot.id, documentSnapshot.data());
     });
   }); */
-  
+
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <ScrollView>
+      <Header />
       <Text>Apples Page!</Text>
-    </View>
+    </ScrollView>
   );
 }
 
