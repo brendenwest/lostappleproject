@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import Header from '../shared/Header';
+import Header from './Header';
 import styles from '../StyleSheet/SummaryStyle';
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, ScrollView, Image, Button, Linking, View} from 'react-native';
-import Header from '../shared/Header';
+import { Text, ScrollView, Image, Button, Linking, View } from 'react-native';
+import Header from './Header';
 import styles from '../StyleSheet/About';
 
 function About() {
