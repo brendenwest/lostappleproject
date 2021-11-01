@@ -6,6 +6,10 @@ import styles from '../StyleSheet/AppleList';
 
 const Item = ({ title }) => (
   <View style={styles.item}>
+    <Image
+        style={styles.applePlaceholder}
+        source={require('../Images/apple-3155.png')}
+      />
     <Text style={styles.title}>{title}</Text>
   </View>
 );
@@ -70,10 +74,6 @@ function Apples() {
   return (
     <>
       <Header />
-      <Image
-        style={styles.applePlaceholder}
-        source={require('../Images/apple-3155.png')}
-      />
       <FlatList
         data={appleList}
         renderItem={renderItem}

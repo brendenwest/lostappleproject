@@ -6,14 +6,22 @@ export default StyleSheet.create({
     /* marginTop: StatusBar.currentHeight || 0, */
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    flexDirection: 'row',
+    backgroundColor: 'crimson',
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
   },
 
   title: {
-    fontSize: 12,
+    flex: 1,
+        fontSize: 20,
+        padding: 10,
+        flexDirection: 'row',
+        color: 'white',
+        alignItems: 'center',
+        alignSelf: 'center',
+        fontWeight: 'bold',
   },
 
   centerText: {
@@ -32,6 +40,7 @@ export default StyleSheet.create({
     borderWidth: 2,
     borderColor: 'black',
     borderRadius: 10,
+    flexDirection: 'column',
   },
 
 });
