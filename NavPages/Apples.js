@@ -1,3 +1,4 @@
+
 import React,  { useState, useEffect } from 'react';
 import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
@@ -51,15 +52,15 @@ function Apples() {
   function onResult(QuerySnapshot) {
     console.log('Got Apple collection result.');
   }
-  
+
   function onError(error) {
     console.error(error);
   }
+
  
   appleCollection.onSnapshot(onResult, onError); 
   ******************************************************** */
 
-  
 
   /* *****************************************************
   firestore().collection('apples').get()
@@ -81,6 +82,7 @@ function Apples() {
       />
     </>
     
+
   );
 }
 

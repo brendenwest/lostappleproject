@@ -1,11 +1,14 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
+import Header from '../shared/Header';
 
 function About() {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <ScrollView>
+      <Header />
       <Text>Map Page!</Text>
-    </View>
+
+    </ScrollView >
   );
 }
 
