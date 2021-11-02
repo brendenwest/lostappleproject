@@ -1,6 +1,5 @@
 import React from 'react';
-import {Text, View, ScrollView, StyleSheet} from 'react-native';
-import Header from '../shared/Header';
+import {View, StyleSheet} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 function Map() {
