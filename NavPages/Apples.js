@@ -1,10 +1,54 @@
-import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
-import Header from '../shared/Header';
-import firestore from '@react-native-firebase/firestore';
 
-function About() {
-  const appleCollection = firestore().collection('apples');
+import React,  { useState, useEffect } from 'react';
+import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar} from 'react-native';
+import firestore from '@react-native-firebase/firestore';
+import Header from '../shared/Header';
+import styles from '../StyleSheet/AppleList';
+
+const Item = ({ title }) => (
+  <View style={styles.item}>
+    <Image
+        style={styles.applePlaceholder}
+        source={require('../Images/apple-3155.png')}
+      />
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
+
+const renderItem = ({ item }) => (
+  <Item title={item.name} />
+);
+
+function Apples() {
+  const [loading, setLoading] = useState(true); // Set loading to true on component mount
+  const [appleList, setApples] = useState([]); // Initial empty array of users
+
+  useEffect(() => {
+    const appleCollection = firestore()
+    .collection('apples')
+    .onSnapshot(querySnapshot => {
+      const appleList = [];
+
+      querySnapshot.forEach(documentSnapshot => {
+        appleList.push({
+          ...documentSnapshot.data(),
+          key: documentSnapshot.id,
+        });
+      });
+
+      setApples(appleList);
+      setLoading(false);
+    });
+
+    // Unsubscribe from events when no longer in use
+    return () => appleCollection();
+  }, []);
+
+  if (loading) {
+    return <ActivityIndicator />;
+  }
+
+  /* **************************************************** 
   function onResult(QuerySnapshot) {
     console.log('Got Apple collection result.');
   }
@@ -13,23 +57,35 @@ function About() {
     console.error(error);
   }
 
-  appleCollection.onSnapshot(onResult, onError);
+ 
+  appleCollection.onSnapshot(onResult, onError); 
+  ******************************************************** */
 
-  /* firestore().collection('apples').get()
+
+  /* *****************************************************
+  firestore().collection('apples').get()
   .then(querySnapshot => {
     console.log('Total apples: ', querySnapshot.size);
-    querySnapshot.forEach(documentSnapShot => {
-      console.log('apple: ', documentSnapshot.id, documentSnapshot.data());
+    querySnapshot.forEach(documentSnapshot => {
+      console.log('apple: ', documentSnapshot.data().name);
     });
-  }); */
-
+  });
+  ******************************************************** */
+  
   return (
-    <ScrollView>
+    <>
       <Header />
-      <Text>Apples Page!</Text>
+      <FlatList
+        data={appleList}
+        renderItem={renderItem}
+        key={item => item.id} /* keyExtractor={item => item.id}*/
+      />
+    </>
+    
 
-    </ScrollView>
   );
 }
 
-export default About;
+
+
+export default Apples;
