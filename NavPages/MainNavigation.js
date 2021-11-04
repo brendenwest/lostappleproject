@@ -44,7 +44,7 @@ const MainNavigation = () => {
           }}
         />
         <Tab.Screen
-          name="Map"
+          name="Map of found apples"
           component={Map}
           options={{
             tabBarLabel: 'Map',
