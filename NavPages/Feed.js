@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
+import Header from '../shared/Header';
 
-function About() {
+function Feed() {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Feed Page!</Text>
-    </View>
+    <ScrollView>
+      <Header />
+    </ScrollView>
   );
 }
 
-export default About;
+export default Feed;
