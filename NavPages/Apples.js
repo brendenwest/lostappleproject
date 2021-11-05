@@ -1,27 +1,49 @@
 
 import React,  { useState, useEffect } from 'react';
-import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar} from 'react-native';
+import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar, TouchableOpacity} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import Header from '../shared/Header';
 import styles from '../StyleSheet/AppleList';
+import { useNavigation } from '@react-navigation/native';
+// import { navigation } from '@react-navigation/native';
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Image
-        style={styles.applePlaceholder}
-        source={require('../Images/apple-3155.png')}
-      />
-    <Text style={styles.title}>{title}</Text>
-  </View>
+const Item = ({ id, title, onPress }) => (
+  //<View style={styles.item}>
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => onPress(id)}
+      >
+      <Image
+          style={styles.applePlaceholder}
+          source={require('../Images/apple-3155.png')}
+        />
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
+  //</View>
 );
+const navigation = useNavigation();
+function onPressItem(id) {
+  navigation.navigate('AppleDetails', { id });
+}
 
-const renderItem = ({ item }) => (
+const renderItem = ({item}) => <Item onPress={onPressItem} title={item.name} />;
+
+
+
+/* const renderItem = ({ item }) => (
+  <TouchableOpacity onPress={() => {
+    navigation.navigate('AppleDetails', {data: item}
+  )}}>
   <Item title={item.name} />
-);
+  </TouchableOpacity>
+); */
 
 function Apples() {
+  
   const [loading, setLoading] = useState(true); // Set loading to true on component mount
-  const [appleList, setApples] = useState([]); // Initial empty array of users
+  const [appleList, setApples] = useState([]); // Initial empty array of apples
+
+
 
   useEffect(() => {
     const appleCollection = firestore()
@@ -47,6 +69,8 @@ function Apples() {
   if (loading) {
     return <ActivityIndicator />;
   }
+
+  
 
   /* **************************************************** 
   function onResult(QuerySnapshot) {
