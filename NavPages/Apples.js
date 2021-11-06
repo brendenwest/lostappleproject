@@ -4,6 +4,7 @@ import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar, T
 import firestore from '@react-native-firebase/firestore';
 import Header from '../shared/Header';
 import styles from '../StyleSheet/AppleList';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 // import { navigation } from '@react-navigation/native';
 
@@ -21,13 +22,6 @@ const Item = ({ id, title, onPress }) => (
     </TouchableOpacity>
   //</View>
 );
-const navigation = useNavigation();
-function onPressItem(id) {
-  navigation.navigate('AppleDetails', { id });
-}
-
-const renderItem = ({item}) => <Item onPress={onPressItem} title={item.name} />;
-
 
 
 /* const renderItem = ({ item }) => (
@@ -38,10 +32,22 @@ const renderItem = ({item}) => <Item onPress={onPressItem} title={item.name} />;
   </TouchableOpacity>
 ); */
 
-function Apples() {
+const Apples = ({ navigation }) => {
   
   const [loading, setLoading] = useState(true); // Set loading to true on component mount
   const [appleList, setApples] = useState([]); // Initial empty array of apples
+
+  //const navigation = useNavigation();
+  const onPressItem = (key) => {
+    navigation.navigate('AppleDetails', { key });
+    console.log('onPressItem: ' + key);
+}
+
+  const renderItem = ({item}) => {
+    console.log("render:" + JSON.stringify(item));
+    return <Item onPress={onPressItem} title={item.name} />;
+    
+  };
 
 
 

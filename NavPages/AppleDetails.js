@@ -1,16 +1,18 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import Apples from './Apples';
+import appleList from './Apples';
 
 const AppleDetails = ({navigation, route}) => {
-  const {getApple} = Apples();
-  const appleItem = getApple(route.params.id);
-  console.log(appleItem);
+  console.log('Params: ' + JSON.stringify(route.params));
+  //console.log(appleList);
+  //const appleItem = getApple(route.params.key);
+  //console.log(appleItem);
+  //console.log(JSON.stringify({item}));
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Apple Details Page!</Text>
-      <Text>{appleItem.name}</Text>
+      <Text></Text>
     </View>
   );
 }
