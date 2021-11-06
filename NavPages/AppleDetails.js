@@ -3,16 +3,16 @@ import {Text, View} from 'react-native';
 import appleList from './Apples';
 
 const AppleDetails = ({navigation, route}) => {
-  console.log('Params: ' + JSON.stringify(route.params));
-  //console.log(appleList);
-  //const appleItem = getApple(route.params.key);
-  //console.log(appleItem);
-  //console.log(JSON.stringify({item}));
+  apDeets = route.params.id;
+  //console.log('Params: ' + JSON.stringify(apDeets));
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Apple Details Page!</Text>
-      <Text></Text>
+      <Text>{apDeets.name}</Text>
+      <Text>Found: {apDeets.found ? apDeets.found : '???'}</Text>
+      <Text>{apDeets.location}</Text>
+
+      {/* ADD FUTURE APPLE IMAGE, APPLE DESC, POSSIBLE EMBEDDED MAP FOR LOCATION?  */}
     </View>
   );
 }
