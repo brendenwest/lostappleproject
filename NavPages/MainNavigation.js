@@ -1,5 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import 'react-native-gesture-handler';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from './Home';
@@ -7,12 +10,13 @@ import About from './About';
 import Map from './Map';
 import Apples from './Apples';
 import Feed from './Feed';
+import AppleDetails from './AppleDetails';
 
 const Tab = createBottomTabNavigator();
 
-const MainNavigation = () => {
+
+function MainNav({navigation}) {
   return (
-    <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={{
@@ -74,8 +78,28 @@ const MainNavigation = () => {
           }}
         />
       </Tab.Navigator>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function MainNavigation({navigation}) {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          name="MainNav"
+          component={MainNav} />
+        <Stack.Screen
+          name="AppleDetails"
+          component={AppleDetails}
+          options={{headerShown: true}} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
-};
-
+}
 export default MainNavigation;
+
+
+
+

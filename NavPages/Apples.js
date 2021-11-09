@@ -1,27 +1,37 @@
 
 import React,  { useState, useEffect } from 'react';
-import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar} from 'react-native';
+import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar, TouchableOpacity} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import Header from '../shared/Header';
 import styles from '../StyleSheet/AppleList';
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Image
-        style={styles.applePlaceholder}
-        source={require('../Images/apple-3155.png')}
-      />
-    <Text style={styles.title}>{title}</Text>
-  </View>
+const Item = ({ id, title, onPress }) => (
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => onPress(id)}
+      >
+      <Image
+          style={styles.applePlaceholder}
+          source={require('../Images/apple-3155.png')}
+        />
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
 );
 
-const renderItem = ({ item }) => (
-  <Item title={item.name} />
-);
 
-function Apples() {
+const Apples = ({ navigation }) => {
+  
   const [loading, setLoading] = useState(true); // Set loading to true on component mount
-  const [appleList, setApples] = useState([]); // Initial empty array of users
+  const [appleList, setApples] = useState([]); // Initial empty array of apples
+
+
+  const renderItem = ({item}) => {
+    //console.log("render:" + JSON.stringify(item));
+    return <Item onPress={() => navigation.navigate('AppleDetails', {id : item})} title={item.name} />;
+    
+  };
+
+
 
   useEffect(() => {
     const appleCollection = firestore()
@@ -48,29 +58,6 @@ function Apples() {
     return <ActivityIndicator />;
   }
 
-  /* **************************************************** 
-  function onResult(QuerySnapshot) {
-    console.log('Got Apple collection result.');
-  }
-
-  function onError(error) {
-    console.error(error);
-  }
-
- 
-  appleCollection.onSnapshot(onResult, onError); 
-  ******************************************************** */
-
-
-  /* *****************************************************
-  firestore().collection('apples').get()
-  .then(querySnapshot => {
-    console.log('Total apples: ', querySnapshot.size);
-    querySnapshot.forEach(documentSnapshot => {
-      console.log('apple: ', documentSnapshot.data().name);
-    });
-  });
-  ******************************************************** */
   
   return (
     <>
