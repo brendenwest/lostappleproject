@@ -4,6 +4,7 @@ import {Text, View, Image, ScrollView, ActivityIndicator, FlatList, StatusBar, T
 import firestore from '@react-native-firebase/firestore';
 import Header from '../shared/Header';
 import styles from '../StyleSheet/AppleList';
+import useStore from '../shared/Firestore';
 
 const Item = ({ id, title, onPress }) => (
     <TouchableOpacity
@@ -20,10 +21,11 @@ const Item = ({ id, title, onPress }) => (
 
 
 const Apples = ({ navigation }) => {
-  
+  const store = useStore();
+ /*
   const [loading, setLoading] = useState(true); // Set loading to true on component mount
   const [appleList, setApples] = useState([]); // Initial empty array of apples
-
+*/
 
   const renderItem = ({item}) => {
     //console.log("render:" + JSON.stringify(item));
@@ -33,7 +35,7 @@ const Apples = ({ navigation }) => {
 
 
 
-  useEffect(() => {
+  /*useEffect(() => {
     const appleCollection = firestore()
     .collection('apples')
     .onSnapshot(querySnapshot => {
@@ -52,18 +54,21 @@ const Apples = ({ navigation }) => {
 
     // Unsubscribe from events when no longer in use
     return () => appleCollection();
-  }, []);
+  }, []); */
 
+  /*
   if (loading) {
     return <ActivityIndicator />;
   }
+  */
 
   
   return (
     <>
       <Header />
       <FlatList
-        data={appleList}
+        data={store.appleList}
+        /* data={appleList} */
         renderItem={renderItem}
         key={item => item.id} /* keyExtractor={item => item.id}*/
       />
