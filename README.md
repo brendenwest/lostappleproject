@@ -15,17 +15,17 @@ The LAP aims to search for a specific list of apple varieties that were known to
 
 #### 4. Clone 
 ```shell
-  git clone https://github.com/brendenwest/lostappleproject.git
+ git clone https://github.com/brendenwest/lostappleproject.git
 ```
 
 #### 5. Run the command to install the dependencies 
-       npm install
+    npm install
     
 #### 6. Run the command to run the Metro
-       npx react-native start
+    npx react-native start
       
 #### 7. Run the command to launch the app
-       npx react-native run-android
+    npx react-native run-android
 
 
 
