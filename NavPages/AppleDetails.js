@@ -7,7 +7,7 @@ import styles from '../StyleSheet/AppleDetailsStyle';
 const AppleDetails = ({navigation, route}) => {
   apDeets = route.params.id;
   //console.log('Params: ' + JSON.stringify(apDeets));
-
+  console.log('Params: ' + JSON.stringify(apDeets));
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
       <Header />
@@ -21,6 +21,7 @@ const AppleDetails = ({navigation, route}) => {
       <Text style={styles.locText}>Found: {apDeets.found ? apDeets.found : '???'}</Text>
       <Text style={styles.locText}>{apDeets.location}</Text>
       <Text style={styles.descText}>Description of the apple</Text>
+      <Text style={styles.locText}>Coordinates:  {apDeets.coordinate._latitude},{apDeets.coordinate._longitude} </Text>
 
       {/* ADD FUTURE APPLE IMAGE, APPLE DESC, POSSIBLE EMBEDDED MAP FOR LOCATION?  */}
     </View>

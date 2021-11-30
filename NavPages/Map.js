@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {View, StyleSheet} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
+import firestore from '@react-native-firebase/firestore';
 
 function Map() {
+  const [appleList, setApples] = useState([]); // Initial empty array of apples
+
+  useEffect(() => {
+    const appleCollection = firestore()
+    .collection('apples')
+    .onSnapshot(querySnapshot => {
+      const appleList = [];
+
+      querySnapshot.forEach(documentSnapshot => {
+        appleList.push({
+          ...documentSnapshot.data(),
+          key: documentSnapshot.id,
+        });
+      });
+
+      setApples(appleList);
+    });
+    //console.log(appleList);
+    // Unsubscribe from events when no longer in use
+    return () => appleCollection();
+  }, []);
   return (
     <View>
       <MapView
@@ -15,7 +37,21 @@ function Map() {
           latitudeDelta: 0.4,
           longitudeDelta: 0.025,
         }}>
-        <Marker
+
+        {appleList.map(item => (
+          // console.log(item.name + ' ' + item.coordinate.latitude),
+          <Marker
+            key={item.id}
+            coordinate={item.coordinate}
+            pinColor={'green'}
+            // coordinate={{latitude: item.coordinate._latitude, longitude: item.coordinate._longitude}}
+            title={item.location}
+            description={item.name}  
+          />
+        )
+        )}
+        
+        {/* <Marker
           coordinate={{latitude: 46.8171611, longitude: -116.693441}}
           pinColor={'green'}
           title={'Latah County, ID'}
@@ -184,7 +220,7 @@ function Map() {
           pinColor={'orange'}
           title={'Pomeroy, WA'}
           description={'Gold Ridge - Found in 2021'}
-        />
+        /> */}
       </MapView>
     </View>
   );
