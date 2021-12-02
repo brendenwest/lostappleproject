@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:214588034741:android:2d75610077b35a82c178fc",
         "android_client_info": {
-          "package_name": "com.lostappleproject"
+          "package_name": "org.lostappleprojectoject"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "214588034741-d5tei3o01kgsej9jm1i540mtk6rirfns.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.lostappleproject",
+            "package_name": "org.lostappleprojectoject",
             "certificate_hash": "d18f7885f666706b28df40a558ac8cd3f4906a4b"
           }
         },
