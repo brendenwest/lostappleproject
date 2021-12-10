@@ -6,7 +6,7 @@ The LAP aims to search for a specific list of apple varieties that were known to
 #### Project Owner:
  - Brenden West - brenbob@gmail.com
 #### Project Developers:
- - Hanna Negash - greeneri1909@gmail.com
+ - Hanna Negash
  - Scott Hansford - schoolandmountains@gmail.com
  - Mike Gilson - zen.sorcere@gmail.com
 ---
