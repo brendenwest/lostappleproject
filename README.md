@@ -4,11 +4,11 @@ Lost Apple Project (LAP) has a mission to locate & preserve heritage apple trees
 The LAP aims to search for a specific list of apple varieties that were known to have been grown in this area and are now considered extinct or lost. When lost varieties are rediscovered, steps will be taken to propagate the trees and make them available again to the public. 
 
 #### Project Owner:
- - Brenden West - brenbob@gmail.com
+ - [Brenden West](https://github.com/brendenwest) - brenbob@gmail.com
 #### Project Developers:
- - Hanna Negash
- - Scott Hansford - schoolandmountains@gmail.com
- - Mike Gilson - zen.sorcere@gmail.com
+ - [Hanna Negash](https://github.com/Hanna-N9)
+ - [Scott Hansford](https://github.com/zenwattage) - schoolandmountains@gmail.com
+ - [Mike Gilson](https://github.com/ZenSorcere) - zen.sorcere@gmail.com
 ---
 ## Required Accounts
  - [Firebase](https://console.firebase.google.com/) (for using Firebase Firestore DB)
